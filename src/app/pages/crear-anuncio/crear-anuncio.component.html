@@ -1,0 +1,86 @@
+<div class="container">
+    <div class="titulo">
+        <h1>Datos de la publicacion</h1>
+    </div>
+    <div class="containerForm">
+        
+        <form (ngSubmit)="publicarAnuncio()">
+            <input type="text" [(ngModel)]="publicacion.name" name="nombre" placeholder="Nombre de la mascota">
+            <select [(ngModel)]="publicacion.type" name="tipo">
+                <option value="" disabled selected>Selecciona un tipo</option>
+                <option value="perro">Perro</option>
+                <option value="gato">Gato</option>
+            </select>            
+            <input type="text" [(ngModel)]="publicacion.race" name="raza" placeholder="Raza">
+            <select [(ngModel)]="publicacion.sex" name="sexo">
+                <option value="" disabled selected>Selecciona el sexo</option>
+                <option value="Hembra">Hembra</option>
+                <option value="Macho">Macho</option>
+            </select>            
+            <select [(ngModel)]="publicacion.sizePet" name="tamanio">
+                <option value="" disabled selected>Selecciona un tamaño</option>
+                <option value="pequeño">Pequeño</option>
+                <option value="mediano">Mediano</option>
+                <option value="grande">Grande</option>
+            </select>            
+
+            <app-drop-zone-img-app #dropZone></app-drop-zone-img-app>
+            <div class="form-group">
+                <label for="direccion">Distrito</label>
+                <select [(ngModel)]="publicacion.district" name="distrito" >
+                    <option hidden value="">Seleccionar distrito</option>
+                    <option value="almagro">Almagro</option>
+                    <option value="balvanera">Balvanera</option>
+                    <option value="barracas">Barracas</option>
+                    <option value="belgrano">Belgrano</option>
+                    <option value="boedo">Boedo</option>
+                    <option value="caballito">Caballito</option>
+                    <option value="chacarita">Chacarita</option>
+                    <option value="colegiales">Colegiales</option>
+                    <option value="constitucion">Constitución</option>
+                    <option value="flores">Flores</option>
+                    <option value="floresta">Floresta</option>
+                    <option value="la_boca">La Boca</option>
+                    <option value="liniers">Liniers</option>
+                    <option value="mataderos">Mataderos</option>
+                    <option value="monserrat">Monserrat</option>
+                    <option value="monte_castro">Monte Castro</option>
+                    <option value="nueva_pompeya">Nueva Pompeya</option>
+                    <option value="nuñez">Núñez</option>
+                    <option value="palermo">Palermo</option>
+                    <option value="parque_avellaneda">Parque Avellaneda</option>
+                    <option value="parque_chacabuco">Parque Chacabuco</option>
+                    <option value="parque_chas">Parque Chas</option>
+                    <option value="parque_patricios">Parque Patricios</option>
+                    <option value="paternal">La Paternal</option>
+                    <option value="puerto_madero">Puerto Madero</option>
+                    <option value="recoleta">Recoleta</option>
+                    <option value="retiro">Retiro</option>
+                    <option value="saavedra">Saavedra</option>
+                    <option value="san_cristobal">San Cristóbal</option>
+                    <option value="san_nicolas">San Nicolás</option>
+                    <option value="san_telmo">San Telmo</option>
+                    <option value="velez_sarsfield">Vélez Sarsfield</option>
+                    <option value="versalles">Versalles</option>
+                    <option value="villa_crespo">Villa Crespo</option>
+                    <option value="villa_del_parque">Villa del Parque</option>
+                    <option value="villa_devoto">Villa Devoto</option>
+                    <option value="villa_gral_mitre">Villa General Mitre</option>
+                    <option value="villa_lugano">Villa Lugano</option>
+                    <option value="villa_luro">Villa Luro</option>
+                    <option value="villa_ortuzar">Villa Ortúzar</option>
+                    <option value="villa_pueyrredon">Villa Pueyrredón</option>
+                    <option value="villa_real">Villa Real</option>
+                    <option value="villa_riquelme">Villa Riachuelo</option>
+                    <option value="villa_santa_rita">Villa Santa Rita</option>
+                    <option value="villa_urquiza">Villa Urquiza</option>
+                  </select>
+                  
+            </div>
+            <input type="text" [(ngModel)]="publicacion.direction" name="direccion" placeholder="Dirreccion">
+            <input type="date" [(ngModel)]="publicacion.dateLost" name="fechaExtravio" placeholder="Fecha de Extravio">
+            <textarea [(ngModel)]="publicacion.description" name="descripcion" placeholder="Descripción"></textarea>
+            <button type="submit">Publicar Anuncio</button>
+        </form>
+    </div>
+</div>

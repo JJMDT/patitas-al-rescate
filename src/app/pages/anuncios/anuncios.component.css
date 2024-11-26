@@ -1,0 +1,139 @@
+/* Estilo global */
+
+
+/* Estructura principal */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: auto;
+    padding: 20px;
+    background: #f8f8f8;
+}
+
+/* Título de la página */
+.container h1 {
+    color: rgb(185, 125, 185);
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 30px;
+    
+}
+
+/* Contenedor de anuncios */
+.anuncios {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    align-items: stretch;
+    height: auto
+
+}
+
+/* Estilo de cada tarjeta de anuncio */
+.card {
+    width: 280px;
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 15px;
+    transition: transform 0.3s ease-in-out;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    
+}
+
+.card:hover {
+    transform: scale(1.05); /* Escala al pasar el mouse */
+}
+
+/* Imagen dentro de la tarjeta */
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* Títulos dentro de la tarjeta */
+.card h3 {
+    font-size: 20px;
+    color: rgb(185, 125, 185); /* Violeta para los títulos */
+    margin-bottom: 10px;
+}
+
+.card h4, .card h5 {
+    font-size: 16px;
+    color: gray;
+    margin-bottom: 10px;
+}
+
+/* Descripción dentro de la tarjeta */
+.card p {
+    font-size: 14px;
+    color: black;
+    margin-bottom: 15px;
+}
+
+/* Botón de contacto */
+.card button {
+    background: rgb(185, 125, 185, 0.9);
+    color: white;
+    font-size: 18px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease-in-out;
+}
+
+.card button:hover {
+    background: rgb(185, 125, 185, 0.7);
+    transform: scale(1.1);
+}
+
+
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    color: black;
+    font-weight: bold;
+  }
+
+  

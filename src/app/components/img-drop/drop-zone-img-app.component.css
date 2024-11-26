@@ -1,0 +1,18 @@
+.containerImg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto auto;
+
+    width: 300px;
+    height: 200px;
+}
+.imgPrev{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto auto;
+
+    width: 3000px;
+    height: 300px;
+}

@@ -1,0 +1,95 @@
+.container {
+    /* padding: 50px 50px;
+    background-image: url('https://st3.depositphotos.com/9880800/16201/i/950/depositphotos_162011644-stock-photo-family-with-dog-walking-at.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    height: 90vh; */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    overflow: hidden;
+}
+.background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -1; /* Colocar el video detrás del contenido */
+}
+.content {
+    position: relative;
+    z-index: 1; /* Asegura que el contenido esté encima del video */
+    color: white; /* Ejemplo de color de texto para destacar sobre el video */
+    text-align: center;
+}
+form {
+    background: rgba(2, 2, 2, 0.5);
+    padding: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    text-align: center;
+    
+}
+button {
+    background: rgb(185, 125, 185,0.9);
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    border:none;
+
+}
+button:hover {
+    background: rgb(185, 125, 185,0.7);
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out
+
+}
+
+input {
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 10px;
+    border: none;
+    font-size: 20px;
+}
+.title {
+    color: white;
+    background: rgb(185, 125, 185);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    text-align: center;
+    padding: 10px;
+}
+.card {
+    width: 400px;
+    
+    /* grid-column: 7; */
+}
+.texto{
+    padding: 20px;
+    font-size: 20px;
+}
+p {
+    color : white;
+}
+a {
+    color: violet;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+a:hover {
+    transition: transform 0.3s ease-in-out;
+    color: rgb(238, 130, 238,0.5);
+}

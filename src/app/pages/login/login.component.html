@@ -1,0 +1,30 @@
+
+<div class="container">
+  <video autoplay loop muted playsinline class="background-video">
+    <source src="https://videos.pexels.com/video-files/3144446/3144446-hd_1920_1080_25fps.mp4" type="video/mp4">
+</video>
+  <div class="card">
+      <div class="title">
+          <h1>Login</h1>
+      </div>
+      <div class="campos">
+          <form action="">
+             
+              <div class="form-group">
+                  <input type="email" [(ngModel)]="userName" name="email" autofocus placeholder="juan@gmail.com">
+              </div>
+              <div class="form-group">
+                  <input type="password" [(ngModel)]="password" name="password" placeholder="********">
+              </div>
+              
+              <button type="submit" (click)="login(userName, password)">Ingresar</button>
+              <br>
+              <div class="texto">
+                  <p>¿No tenés cuenta?  <a (click)="navegar('registro')"> regístrate</a></p>
+                </div>
+            </form>
+      </div>
+
+      
+  </div>
+</div>

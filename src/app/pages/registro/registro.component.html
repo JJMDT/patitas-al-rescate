@@ -1,0 +1,94 @@
+<div class="container">
+    <div class="card">
+        <div class="title">
+            <h1>Registrarse</h1>
+        </div>
+        <div class="campos">
+            <form (ngSubmit)="registrar()">
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input [(ngModel)]="usuario.name" type="text" id="nombre"  name="nombre" placeholder="Juan" required />                </div>
+                <div class="form-group">
+                    <label for="apellido">Apellido</label>
+                    <input  [(ngModel)]="usuario.lastName" type="text" id="apellido"  name="apellido" placeholder="Perez" required />
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Telefono</label>
+                    <input  [(ngModel)]="usuario.phone" type="text" id="telefono" name="telefono" placeholder="1166554433" required />
+                </div>
+                <div class="form-group">
+                    <label for="direccion">Direccion</label>
+                    <input  [(ngModel)]="usuario.direction" type="text" id="direccion"  name="direccion" placeholder="Av Corrientes 3220" required />
+                </div>
+                <div class="form-group">
+                    <label for="direccion">Distrito</label>
+                    <select [(ngModel)]="usuario.district" id="distrito"  name="distrito"  id="distritos" >
+                        <option hidden value="">Seleccionar distrito</option>
+                        <option value="almagro">Almagro</option>
+                        <option value="balvanera">Balvanera</option>
+                        <option value="barracas">Barracas</option>
+                        <option value="belgrano">Belgrano</option>
+                        <option value="boedo">Boedo</option>
+                        <option value="caballito">Caballito</option>
+                        <option value="chacarita">Chacarita</option>
+                        <option value="colegiales">Colegiales</option>
+                        <option value="constitucion">Constitución</option>
+                        <option value="flores">Flores</option>
+                        <option value="floresta">Floresta</option>
+                        <option value="la_boca">La Boca</option>
+                        <option value="liniers">Liniers</option>
+                        <option value="mataderos">Mataderos</option>
+                        <option value="monserrat">Monserrat</option>
+                        <option value="monte_castro">Monte Castro</option>
+                        <option value="nueva_pompeya">Nueva Pompeya</option>
+                        <option value="nuñez">Núñez</option>
+                        <option value="palermo">Palermo</option>
+                        <option value="parque_avellaneda">Parque Avellaneda</option>
+                        <option value="parque_chacabuco">Parque Chacabuco</option>
+                        <option value="parque_chas">Parque Chas</option>
+                        <option value="parque_patricios">Parque Patricios</option>
+                        <option value="paternal">La Paternal</option>
+                        <option value="puerto_madero">Puerto Madero</option>
+                        <option value="recoleta">Recoleta</option>
+                        <option value="retiro">Retiro</option>
+                        <option value="saavedra">Saavedra</option>
+                        <option value="san_cristobal">San Cristóbal</option>
+                        <option value="san_nicolas">San Nicolás</option>
+                        <option value="san_telmo">San Telmo</option>
+                        <option value="velez_sarsfield">Vélez Sarsfield</option>
+                        <option value="versalles">Versalles</option>
+                        <option value="villa_crespo">Villa Crespo</option>
+                        <option value="villa_del_parque">Villa del Parque</option>
+                        <option value="villa_devoto">Villa Devoto</option>
+                        <option value="villa_gral_mitre">Villa General Mitre</option>
+                        <option value="villa_lugano">Villa Lugano</option>
+                        <option value="villa_luro">Villa Luro</option>
+                        <option value="villa_ortuzar">Villa Ortúzar</option>
+                        <option value="villa_pueyrredon">Villa Pueyrredón</option>
+                        <option value="villa_real">Villa Real</option>
+                        <option value="villa_riquelme">Villa Riachuelo</option>
+                        <option value="villa_santa_rita">Villa Santa Rita</option>
+                        <option value="villa_urquiza">Villa Urquiza</option>
+                      </select>
+                      
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input  [(ngModel)]="usuario.email" type="email" id="email"  name="email" placeholder="juan@gmail.com" required />
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input  [(ngModel)]="usuario.password" type="password" id="password"  name="password" placeholder="********" required />
+                </div>
+               
+                <button type="submit">Enviar</button>
+                <br>
+                <div class="texto">
+                    <p>¿Ya tenés cuenta? <a (click)="navegar('/login')">Iniciar sesión</a></p>
+                </div>
+            </form>
+        </div>
+
+       
+    </div>
+</div>

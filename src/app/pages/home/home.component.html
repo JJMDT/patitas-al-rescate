@@ -1,0 +1,45 @@
+<div class="container">
+    <h1>Bienvenidos a Patitas al Rescate</h1>
+    <p>Tu mascota está perdida? Encontraste una mascota perdida? </p>
+  
+    <div class="cards carta">
+      <div class="card">
+        <i class="fa-solid fa-magnifying-glass fa-2xl" style="color: #010101;"></i>
+        <br>
+        <br>
+        <h3>Buscá entre las publicaciones</h3>
+        <p>Si tu mascota está perdida podés buscar entre los anuncios si alguien la encontró</p>
+        <button class="btn-publicacion" (click)="navegar('anuncios')">Ver Publicaciones</button>
+      </div>
+  
+      <div class="card">
+        <i class="fa-solid fa-clipboard fa-2xl" style="color: #010101;"></i>
+        <br>
+        <br>
+        <h3>Publicá un anuncio</h3>
+        <p>Ya sea que encontraste una mascota o tu mascota perdida no está en ninguno de los anuncios, podés subir tu propia publicación.</p>
+        <button 
+        class="btn-publicacion" 
+        *ngIf="authService.isLoggedIn()" 
+        (click)="navegar('crear-anuncio')">
+        Crear publicación
+      </button>
+    
+      <!-- Botón para iniciar sesión (si no está logueado) -->
+      <button 
+        class="btn-publicacion" 
+        *ngIf="!authService.isLoggedIn()" 
+        (click)="navegar('login')">
+        Inicia sesión
+      </button>
+    </div>
+  
+      <div class="card">
+        <i class="fa-solid fa-dog fa-2xl" style="color: #010101;"></i>
+        <bR>
+        <br>
+        <h3>Reencontrate</h3>
+        <p>Te acercamos los datos de contacto para que los dueños se reencuentren con su mascota</p>
+      </div>
+    </div>
+  </div>

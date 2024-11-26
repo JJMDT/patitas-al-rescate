@@ -1,0 +1,8 @@
+
+<ngx-dropzone class="containerImg" (change)="onSelect($event)">
+	<ngx-dropzone-label>Seleccionar foto</ngx-dropzone-label>
+	
+	<ngx-dropzone-image-preview class="imgPrev"  ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f">	
+	</ngx-dropzone-image-preview>
+</ngx-dropzone>
+

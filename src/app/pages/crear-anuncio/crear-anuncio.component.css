@@ -1,0 +1,71 @@
+.container {
+    padding: 50px 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: start;
+    background-image: url("https://st2.depositphotos.com/2166177/5479/i/450/depositphotos_54798759-stock-photo-dog-on-the-railway-platform.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    
+}
+.containerForm{
+    width: 400px;
+}
+form {
+    background: rgba(2, 2, 2, 0.5);
+    padding: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    text-align: center;
+    
+    
+}
+button {
+    background: rgb(185, 125, 185,0.9);
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    border:none;
+}
+button:hover {
+    background: rgb(185, 125, 185,0.7);
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+label {
+    margin: 10px;
+    color: rgba(255, 255, 255, 0.699);
+    font-weight: bold;
+    font-size: 20px;
+    padding: 0px;
+    border-radius: 10px;
+    background: rgba(251, 200, 181, 0);
+    display: flex;
+    align-items: center;
+    height: 100%; /* Asegúrate de que el contenedor del label tenga una altura definida */
+    padding: 0 10px; /* Añade un relleno a los lados del texto */
+}
+input,select,textarea {
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 10px;
+    border: none;
+    font-size: 20px;
+    width: 90%;
+}
+textarea{
+    height: 200px;
+}
+select {
+    
+    width: 90%;
+}
+h1{
+    color: rgba(255, 255, 255, 0.822);
+}

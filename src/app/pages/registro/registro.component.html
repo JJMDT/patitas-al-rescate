@@ -6,22 +6,22 @@
         <div class="campos">
             <form (ngSubmit)="registrar()">
                 <div class="form-group">
-                    <label for="nombre">Nombre</label>
-                    <input [(ngModel)]="usuario.name" type="text" id="nombre"  name="nombre" placeholder="Juan" required />                </div>
+                    <!-- <label for="nombre">Nombre</label> -->
+                    <input [(ngModel)]="usuario.name" type="text" id="nombre"  name="nombre" placeholder="Nombre" required />                </div>
                 <div class="form-group">
-                    <label for="apellido">Apellido</label>
-                    <input  [(ngModel)]="usuario.lastName" type="text" id="apellido"  name="apellido" placeholder="Perez" required />
+                    <!-- <label for="apellido">Apellido</label> -->
+                    <input  [(ngModel)]="usuario.lastName" type="text" id="apellido"  name="apellido" placeholder="Apellido" required />
                 </div>
                 <div class="form-group">
-                    <label for="telefono">Telefono</label>
-                    <input  [(ngModel)]="usuario.phone" type="text" id="telefono" name="telefono" placeholder="1166554433" required />
+                    <!-- <label for="telefono">Telefono</label> -->
+                    <input  [(ngModel)]="usuario.phone" type="text" id="telefono" name="telefono" placeholder="NRO de telefono" required />
                 </div>
                 <div class="form-group">
-                    <label for="direccion">Direccion</label>
-                    <input  [(ngModel)]="usuario.direction" type="text" id="direccion"  name="direccion" placeholder="Av Corrientes 3220" required />
+                    <!-- <label for="direccion">Direccion</label> -->
+                    <input  [(ngModel)]="usuario.direction" type="text" id="direccion"  name="direccion" placeholder="Direccion" required />
                 </div>
                 <div class="form-group">
-                    <label for="direccion">Distrito</label>
+                    <!-- <label for="direccion">Distrito</label> -->
                     <select [(ngModel)]="usuario.district" id="distrito"  name="distrito"  id="distritos" >
                         <option hidden value="">Seleccionar distrito</option>
                         <option value="almagro">Almagro</option>
@@ -73,12 +73,12 @@
                       
                 </div>
                 <div class="form-group">
-                    <label for="email">Email</label>
-                    <input  [(ngModel)]="usuario.email" type="email" id="email"  name="email" placeholder="juan@gmail.com" required />
+                    <!-- <label for="email">Email</label> -->
+                    <input  [(ngModel)]="usuario.email" type="email" id="email"  name="email" placeholder="Email" required />
                 </div>
                 <div class="form-group">
-                    <label for="password">Password</label>
-                    <input  [(ngModel)]="usuario.password" type="password" id="password"  name="password" placeholder="********" required />
+                    <!-- <label for="password">Password</label> -->
+                    <input  [(ngModel)]="usuario.password" type="password" id="password"  name="password" placeholder="Password" required />
                 </div>
                
                 <button type="submit">Enviar</button>

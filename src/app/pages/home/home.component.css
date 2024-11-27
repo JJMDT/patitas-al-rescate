@@ -20,6 +20,13 @@
     height: 100vh;
     width: 100%;
     text-align: center;
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    align-items: stretch;
+    height: auto
   }
   
   h1 {
@@ -68,5 +75,42 @@
     padding: 10px 20px;
     font-size: 1.2em;
     cursor: pointer;
+  }
+  
+  
+  @media screen and (max-width: 768px) {
+  
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      padding: 1em;
+  
+      background-color: white;
+    }
+
+  
+    h1 {
+      font-size: 2em;
+    }
+  
+    p {
+      font-size: 1em;
+      margin-bottom: 1em;
+    }
+  
+    .cards {
+      flex-direction: column;
+      gap: 1em;
+    }
+  
+    .card {
+      margin: 10px 0;
+    }
+  
+    .btn-publicacion {
+      font-size: 1em;
+      padding: 8px 16px;
+    }
   }
   

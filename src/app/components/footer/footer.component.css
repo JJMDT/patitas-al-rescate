@@ -1,24 +1,33 @@
 .footer {
     background-color: #f8c7b5;; /* Combina con el diseño general */
     color: #4a0963;
-    padding: 20px 10px;
+    padding: 0px 0px;
     font-family: 'Arial', sans-serif;
-    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
 
+ 
+    
   }
   
   .footer-content {
+    padding: 20px 0;
+
     display: flex;
-    justify-content: space-between;
+    align-items: start;
+    justify-content: space-around;
     flex-wrap: wrap;
     
   }
   
-  .footer-section {
-    flex: 1 1 30%;
-    margin: 10px;
+.footer-section{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.footer-section li  :hover{
+  cursor: pointer;
 
-  }
+}
   
   .footer-section h4 {
     font-size: 1.2rem;
@@ -39,24 +48,29 @@
   
   .footer-section ul li {
     margin-bottom: 5px;
+    cursor: pointer;
+
   }
   
   .footer-section ul li a {
     color: #3e0404; 
     text-decoration: none;
+    cursor: pointer;
+
   }
   
   .footer-section ul li a:hover {
     text-decoration: underline;
+    cursor: pointer;
+
   }
   
   .footer-bottom {
     text-align: center;
-    margin-top: 20px;
+    padding: 10px 0;
     font-size: 0.8rem;
-    border-top: 1px solid #010101;
-    padding-top: 10px;
-    color: #850764;
+    color: white;
+    background-color: black;
   }
   
   @media screen and (max-width: 768px) {
@@ -66,24 +80,31 @@
     }
   
     .footer-section {
-      flex: 1 1 100%;
-      text-align: center;
+      width: 100%;
+      margin-bottom: 20px;
     }
-  }
-
-  .social-icons {
-    margin-top: 10px;
-  }
   
-  .social-icons a {
-    color: #f37171;
-    margin-right: 15px;
-    font-size: 1.5rem;
-    transition: color 0.3s ease;
-    text-decoration: none;
-  }
+    .footer-section h4 {
+      font-size: 1rem;
+    }
   
-  .social-icons a:hover {
-    color: #f37171; 
+    .footer-section p,
+    .footer-section ul {
+      font-size: 0.8rem;
+    }
+  
+    .footer-bottom {
+      font-size: 0.7rem;
+    }
+    i{
+      font-size: 1.5rem;
+      padding: 10px;
+      color: #850764;
+    }
+    i:hover{
+      color: #3e0404;
+      cursor: pointer;
+      
+    }
   }
   

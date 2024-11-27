@@ -12,11 +12,9 @@ header {
 
 nav {
     background-color: #a689d4; /* Color morado para toda la barra */
-   
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
 }
 
 nav ul {
@@ -29,7 +27,7 @@ nav ul {
 nav ul li {
     display: flex;
     justify-content: center;
-    font-size: 1.5em;
+    font-size: 1em;
     color: #ffffff;
     padding: 15px 20px;
     margin: 0 10px;
@@ -40,10 +38,9 @@ nav ul li {
 
 nav ul li:hover {
     background-color: #d1b3e6;
-    transform: scale(0.9);
+    transform: scale(1.1);
     cursor: pointer;
 }
-
 
 /* Alineación de las imágenes de los animales */
 .cabecera {
@@ -64,32 +61,12 @@ nav ul li:hover {
     margin-right: 10px; /* Espacio entre el logo y el nombre */
 }
 
-.boton-iniciar-sesion{
-    margin-right: 5px;
-    padding: 10px 20px;
-    font-size: 1.5em;
-    font-family: "DynaPuff", system-ui;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-    background-color: #a689d4; /* Color morado para el botón */
-    color: white;
-    border: none;
-    border-radius: 15px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-.boton-iniciar-sesion:hover {
-   transform: scale(1.2);
-  
-}
-
 img {
     border-radius: 50px;
 }
 
 .auth-button button {
-    font-size: 1.3em;
+    font-size: 1em;
     color: #ffffff;
     padding: 15px 20px;
     margin: 0 10px;
@@ -98,11 +75,49 @@ img {
     transition: background-color 0.3s ease;
     cursor: pointer;
     border: none;
-  }
-  
-  .auth-button button:hover {
-    background-color: #d1b3e6;
-    transform: scale(0.9);
-    transition: background-color 0.3s ease;
+}
 
-  }
+.auth-button button:hover {
+    background-color: #d1b3e6;
+    transform: scale(1.1);
+    transition: background-color 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul li {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .cabecera {
+        flex-direction: column;
+        padding: 20px 0;
+    }
+
+    .logo-img {
+        width: 80px;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .auth-button button {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .auth-button button:hover {
+        background-color: #d1b3e6;
+        transition: background-color 0.3s ease;
+    }
+
+}

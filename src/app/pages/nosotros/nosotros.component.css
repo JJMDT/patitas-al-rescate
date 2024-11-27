@@ -72,3 +72,23 @@ button:hover {
   transform: scale(1.1);
   transition: transform 0.3s ease-in-out;
 }
+
+
+@media screen and (max-width: 768px) {
+  h1, h2 {
+    font-size: 2em;
+  }
+
+  p {
+    font-size: 1em;
+  }
+
+  .container {
+    padding: 50px;
+  }
+
+  button {
+    font-size: 18px;
+    padding: 8px;
+  }
+}

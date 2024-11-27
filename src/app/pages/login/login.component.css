@@ -93,3 +93,41 @@ a:hover {
     transition: transform 0.3s ease-in-out;
     color: rgb(238, 130, 238,0.5);
 }
+
+@media screen and (max-width: 768px) {
+    .container {
+        height: auto;
+        padding: 20px;
+    }
+    .card {
+        width: 100%;
+    }
+    .title {
+        font-size: 15px;
+        padding: 8px;
+    }
+    .content {
+        padding: 10px;
+    }
+    form {
+        padding: 10px;
+    }
+    button {
+        font-size: 18px;
+        padding: 8px;
+    }
+    input {
+        font-size: 18px;
+        padding: 8px;
+    }
+    .texto {
+        font-size: 18px;
+        padding: 15px;
+    }
+    p {
+        font-size: 16px;
+    }
+    a {
+        font-size: 16px;
+    }
+}

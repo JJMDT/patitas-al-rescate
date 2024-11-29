@@ -1,4 +1,4 @@
-.container {
+.container_login {
     /* padding: 50px 50px;
     background-image: url('https://st3.depositphotos.com/9880800/16201/i/950/depositphotos_162011644-stock-photo-family-with-dog-walking-at.jpg');
     background-repeat: no-repeat;
@@ -71,7 +71,7 @@ input {
     text-align: center;
     padding: 10px;
 }
-.card {
+.card_form {
     width: 400px;
     
     /* grid-column: 7; */
@@ -95,7 +95,7 @@ a:hover {
 }
 
 @media screen and (max-width: 768px) {
-    .container {
+    .container_login {
         height: auto;
         padding: 20px;
     }
@@ -129,5 +129,10 @@ a:hover {
     }
     a {
         font-size: 16px;
+        
     }
+ 
+}
+a:hover {
+    color: rgb(238, 130, 238,0.5) !important;
 }

@@ -9,7 +9,7 @@ body {
   font-family: Arial, sans-serif;
 }
 
-.container {
+.container_nosotros {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -23,7 +23,7 @@ body {
   overflow: auto; /* Esto previene que el contenido se desborde */
 }
 
-.container::before {
+.container_nosotros::before {
   content: "";
   position: absolute;
   top: 0;
@@ -83,7 +83,7 @@ button:hover {
     font-size: 1em;
   }
 
-  .container {
+  .container_nosotros {
     padding: 50px;
   }
 

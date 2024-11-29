@@ -1,4 +1,4 @@
- 
+<!--  
 <header>
     <div class="logo">
         <img src="https://i.imgur.com/4UzbWfO.png" alt="Logo" class="logo-img">
@@ -22,4 +22,34 @@
   </ul>
  
 </nav>
-
+ -->
+ <!-- Image and text -->
+ <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid container_logo">
+    
+      <img src="https://i.imgur.com/4UzbWfO.png" alt="Logo" class="logo-img">
+      <p>
+        Patitas al Rescate
+      </p>
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" (click)="navegar('home')">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="navegar('anuncios')">Anuncios</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="navegar('nosotros')">Sobre Nosotros</a>
+        </li>
+        <li class="nav-item"  >
+          <a class="nav-link" (click)="handleAuthAction()"> {{ authService.isLoggedIn() ? 'Cerrar sesión' : 'Iniciar sesión' }}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,4 +1,4 @@
-.container {
+.container_anuncio {
     padding: 50px 50px;
     display: flex;
     justify-content: center;
@@ -7,33 +7,33 @@
     background-image: url("https://st2.depositphotos.com/2166177/5479/i/450/depositphotos_54798759-stock-photo-dog-on-the-railway-platform.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-
-    
 }
-.containerForm{
+
+.containerForm {
     width: 400px;
 }
+
 form {
     background: rgba(2, 2, 2, 0.5);
     padding: 10px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     text-align: center;
-    
-    
 }
+
 button {
-    background: rgb(185, 125, 185,0.9);
+    background: rgb(185, 125, 185, 0.9);
     color: white;
     font-size: 20px;
     padding: 10px;
     border-radius: 5px;
     margin-top: 10px;
     cursor: pointer;
-    border:none;
+    border: none;
 }
+
 button:hover {
-    background: rgb(185, 125, 185,0.7);
+    background: rgb(185, 125, 185, 0.7);
     transform: scale(1.1);
     transition: transform 0.3s ease-in-out;
 }
@@ -48,10 +48,11 @@ label {
     background: rgba(251, 200, 181, 0);
     display: flex;
     align-items: center;
-    height: 100%; /* Asegúrate de que el contenedor del label tenga una altura definida */
-    padding: 0 10px; /* Añade un relleno a los lados del texto */
+    height: 100%;
+    padding: 0 10px;
 }
-input,select,textarea {
+
+input, select, textarea {
     padding: 5px 10px;
     margin: 5px;
     border-radius: 10px;
@@ -59,13 +60,79 @@ input,select,textarea {
     font-size: 20px;
     width: 90%;
 }
-textarea{
+
+textarea {
     height: 200px;
 }
+
 select {
-    
     width: 90%;
 }
-h1{
-    color: rgba(255, 255, 255, 0.822);
+
+h2 {
+    color: rgb(252, 252, 252);
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container_anuncio {
+        padding: 20px;
+    }
+
+    .containerForm {
+        width: 100%;
+    }
+
+    form {
+        padding: 20px;
+    }
+
+    button {
+        font-size: 18px;
+        padding: 8px;
+    }
+
+    label {
+        font-size: 18px;
+    }
+
+    input, select, textarea {
+        font-size: 18px;
+        width: 100%;
+    }
+
+    textarea {
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container_anuncio {
+        padding: 10px;
+    }
+
+    form {
+        padding: 10px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 6px;
+    }
+
+    label {
+        font-size: 16px;
+    }
+
+    input, select, textarea {
+        font-size: 16px;
+    }
+
+    textarea {
+        height: 100px;
+    }
 }

@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container_anuncio">
     <div class="titulo">
-        <h1>Datos de la publicacion</h1>
+        <h2>Datos de la publicacion</h2>
     </div>
     <div class="containerForm">
         
@@ -26,7 +26,6 @@
 
             <app-drop-zone-img-app #dropZone></app-drop-zone-img-app>
             <div class="form-group">
-                <label for="direccion">Distrito</label>
                 <select [(ngModel)]="publicacion.district" name="distrito" >
                     <option hidden value="">Seleccionar distrito</option>
                     <option value="almagro">Almagro</option>
@@ -77,7 +76,7 @@
                   </select>
                   
             </div>
-            <input type="text" [(ngModel)]="publicacion.direction" name="direccion" placeholder="Dirreccion">
+            <input type="text" [(ngModel)]="publicacion.direction" name="direccion" placeholder="Direccion">
             <input type="date" [(ngModel)]="publicacion.dateLost" name="fechaExtravio" placeholder="Fecha de Extravio">
             <textarea [(ngModel)]="publicacion.description" name="descripcion" placeholder="Descripción"></textarea>
             <button type="submit">Publicar Anuncio</button>

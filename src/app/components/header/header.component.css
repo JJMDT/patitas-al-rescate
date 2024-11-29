@@ -1,25 +1,20 @@
-:host {
+/* :host {
     font-family: "DynaPuff", system-ui;
 }
 
 header {
-    display: flex; /* Distribuye los elementos en una fila */
-    justify-content: space-between; /* Coloca los elementos a los lados */
-    align-items: center; /* Centra los elementos verticalmente */
-    background-color: #f8c7b5; /* Fondo color salmón */
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    background-color: #f8c7b5; 
     padding: 10px 20px;
 }
 
-nav {
-    background-color: #a689d4; /* Color morado para toda la barra */
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-}
+
 
 nav ul {
     list-style: none;
-    display: flex; /* Alinea los elementos en fila */
+    display: flex; 
     padding: 0;
     margin: 0;
 }
@@ -42,27 +37,12 @@ nav ul li:hover {
     cursor: pointer;
 }
 
-/* Alineación de las imágenes de los animales */
 .cabecera {
     background-color: #ffffff;
     padding: 40px 0;
     display: flex;
     justify-content: space-around;
     align-items: center;
-}
-
-.logo {
-    display: flex; /* Usamos flexbox para alinear los elementos en fila */
-    align-items: center; /* Alineamos los elementos verticalmente en el centro */
-}
-
-.logo-img {
-    width: 100px; /* Ajusta el tamaño del logo según sea necesario */
-    margin-right: 10px; /* Espacio entre el logo y el nombre */
-}
-
-img {
-    border-radius: 50px;
 }
 
 .auth-button button {
@@ -84,6 +64,14 @@ img {
 }
 
 @media screen and (max-width: 768px) {
+a:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    background-color: #7529ef;
+    color: white;
+    border-radius: 30px 10px;
+ 
+}
     header {
         flex-direction: column;
         align-items: flex-start;
@@ -120,4 +108,92 @@ img {
         transition: background-color 0.3s ease;
     }
 
+} */
+
+.container_logo p {
+   margin: 0;
+   font-size: 25px;
+   cursor: default;
+  
+}
+.logo {
+    display: flex ;
+    align-items: center ;
+   
+}
+
+
+.logo-img {
+    width: 70px; 
+    margin-right: 10px; 
+}
+
+img {
+    border-radius: 50px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    
+}
+
+a:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    background-color: #7529ef;
+    color: white;
+    border-radius: 30px 10px;
+ 
+}
+
+li{
+    padding: 0 10px;
+}
+
+/* 
+.navbar {
+    height: 100px;
+    background-color: #f8c7b5 !important;
+    
+}
+a{
+    color: inherit;
+}
+a:hover {
+    color: #a689d4;
+}
+ ul li {
+    display: flex;
+    justify-content: center;
+    font-size: 1em;
+    color: #ffffff;
+    margin: 0 10px;
+    border-radius: 10px;
+    background-color: #a689d4;
+    transition: background-color 0.3s ease;
+}
+
+ ul li :hover {
+    background-color: #d1b3e6;
+    transform: scale(1.1);
+    cursor: pointer;
+    border-radius: 10px;
+}
+nav {
+    background-color: #a689d4; 
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+} */
+@media screen and (max-width: 768px) {
+a:hover{
+    cursor: pointer;
+    text-align: center;
+    transform: scale(1.1);
+    background-color: #7529ef;
+    color: white;
+    border-radius: 30px 10px;
+ 
+}
 }

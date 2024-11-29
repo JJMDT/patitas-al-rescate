@@ -2,7 +2,7 @@
 
 
 /* Estructura principal */
-.container {
+.container_mascotas {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -13,7 +13,7 @@
 }
 
 /* Título de la página */
-.container h1 {
+.container_mascotas h1 {
     color: rgb(185, 125, 185);
     font-size: 32px;
     font-weight: bold;

@@ -6,6 +6,7 @@ import { AnunciosComponent } from './pages/anuncios/anuncios.component';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { NosotrosComponent } from './pages/nosotros/nosotros.component';
 import { CrearAnuncioComponent } from './pages/crear-anuncio/crear-anuncio.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 
 
@@ -17,5 +18,6 @@ export const routes: Routes = [
     {path: 'registro' , component: RegistroComponent},
     {path: 'usuarios' , component: AnunciosComponent},
     {path: 'crear-anuncio' , component: CrearAnuncioComponent},
+    {path: 'profile' , component: ProfileComponent},
     {path: '', redirectTo: '/home', pathMatch: 'full'}
 ];

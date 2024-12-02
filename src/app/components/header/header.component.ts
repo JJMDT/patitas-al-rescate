@@ -1,17 +1,19 @@
 import { Component } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { AuthLoginService } from '../../servicio/auth-login.service';
-
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [ ],
+  imports: [ CommonModule ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
 // se injecta el router para poder navegar entre las rutas
-  constructor(
+  
+
+constructor(
      private router:Router,
      public authService: AuthLoginService
     ) { 
@@ -48,4 +50,8 @@ export class HeaderComponent {
       this.router.navigate(['/login']);
     }
   }
+  getUserName(): string {
+    return this.authService.getUserName();
+  }
+ 
 }

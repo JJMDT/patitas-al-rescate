@@ -197,3 +197,11 @@ a:hover{
  
 }
 }
+
+.submenu ul li {
+    font-size: 12px;
+}
+.submenu ul li:hover {
+    font-size: 12px;
+    border-radius: 0px;
+}

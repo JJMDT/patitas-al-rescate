@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { isPlatformBrowser } from '@angular/common';
+import Swal from 'sweetalert2'
 
 
 @Injectable({
@@ -11,6 +12,8 @@ import { isPlatformBrowser } from '@angular/common';
 export class AuthLoginService {
   // unUser: string = '';
   // unPass: string = ''; 
+  private userName: string = ''; // Aquí puedes obtener el nombre del usuario desde tu lógica de autenticación
+
 
   private apiUrl = '//localhost:8080/auth';
 
@@ -22,6 +25,7 @@ export class AuthLoginService {
 
   inicioSesion(email: string, password: string): Observable<any> {
     const datos = { userName: email, password: password };
+    this.userName = email;
     return this.http.post(`${this.apiUrl}/login`, datos).pipe(
       catchError((error) => {
         console.error('Error en inicio de sesión:', error);
@@ -46,9 +50,25 @@ export class AuthLoginService {
 
   logout(): void {
     if (this.isBrowser()) {
-      localStorage.removeItem('authToken');
-      console.log('Sesión cerrada. Token eliminado.');
-      alert('Sesión cerrada.');
+    
+      Swal.fire({
+        title: "¿Desea cerrar sesión??",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Cerrar sesion",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          localStorage.removeItem('authToken');
+          console.log('Sesión cerrada. Token eliminado.');
+          Swal.fire({
+            title: "Sesion cerrada con exito",
+            icon: "success"
+          });
+        }
+      });
+      
     }
   }
 
@@ -63,4 +83,10 @@ export class AuthLoginService {
 private isBrowser(): boolean {
   return isPlatformBrowser(this.platformId); // Usa isPlatformBrowser para validaciones robustas
 }
+
+getUserName(): string {
+  return this.userName;
+}
+
+
 }

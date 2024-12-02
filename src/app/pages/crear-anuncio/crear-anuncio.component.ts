@@ -4,11 +4,14 @@ import { FormsModule } from '@angular/forms';  // Importa FormsModule
 import { Publicacion } from '../../model/publicacion';
 import { DropZoneImgAppComponent } from '../../components/img-drop/drop-zone-img-app.component';
 import { ServicioMascotasService } from '../../servicio/servicio-mascotas.service';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import Swal from 'sweetalert2'
+
 
 @Component({
   selector: 'app-crear-anuncio',
   standalone: true,
-  imports: [FormsModule,DropZoneImgAppComponent],  // Añade FormsModule a los imports
+  imports: [FormsModule,DropZoneImgAppComponent,SweetAlert2Module],  // Añade FormsModule a los imports
   templateUrl: './crear-anuncio.component.html',
   styleUrl: './crear-anuncio.component.css'
 })
@@ -61,6 +64,7 @@ export class CrearAnuncioComponent {
 
     // enviar nuevoAnuncio a la base de datos
     alert('Anuncio publicado con éxito');
+
   
       this.navegar('/anuncios');
     

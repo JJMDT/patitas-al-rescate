@@ -4,6 +4,7 @@ import { ServicioMascotasService } from '../../servicio/servicio-mascotas.servic
 import { CommonModule } from '@angular/common';
 import { Usuario } from '../../model/usuario';
 
+
 @Component({
   selector: 'app-anuncios',
   standalone: true,

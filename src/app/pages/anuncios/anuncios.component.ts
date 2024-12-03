@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { UsuariosService } from '../../servicio/usuarios.service';
 import { ServicioMascotasService } from '../../servicio/servicio-mascotas.service';
 import { CommonModule } from '@angular/common';
-import { Usuario } from '../../model/usuario';
-
-
+import { Router } from '@angular/router';
+import { AuthLoginService } from '../../servicio/auth-login.service';
 @Component({
   selector: 'app-anuncios',
   standalone: true,
@@ -21,8 +19,9 @@ export class AnunciosComponent implements OnInit {
   
 
   constructor(
-    private usuariosService: UsuariosService,
-    private servicioMascotasService: ServicioMascotasService
+    private servicioMascotasService: ServicioMascotasService,
+    private router: Router,
+    public authLoginService: AuthLoginService
   ) {}
 
   ngOnInit(): void {
@@ -49,5 +48,9 @@ export class AnunciosComponent implements OnInit {
     this.publicacionSeleccionada = null;
   }
 
-
+  // Función para redirigir a la página de publicación
+  navegar(direccion: string) {
+    this.router.navigate([direccion]); // se navega a la ruta que se le pase por parametro
+  }
+  
 }

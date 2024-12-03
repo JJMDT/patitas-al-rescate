@@ -4,15 +4,16 @@ import { NavigationEnd, Router } from '@angular/router';
 import { NgModule } from '@angular/core';
 
 import { FormsModule } from '@angular/forms';
-
+import { CommonModule } from '@angular/common';
 import { AuthLoginService } from '../../servicio/auth-login.service';
 import Swal from 'sweetalert2'
+
 
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule,CommonModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
@@ -20,6 +21,8 @@ export class LoginComponent {
   
   userName: string = '';
   password: string = '';
+  isPasswordVisible: boolean = false;
+
   
   constructor(
     private router: Router,
@@ -40,7 +43,6 @@ export class LoginComponent {
     // Llama al servicio de autenticación
     this.authService.inicioSesion(this.userName, this.password).subscribe(
       (response) => {
-        console.log('Login exitoso:', response);
         const token = response?.token;
         if(token){
 
@@ -57,8 +59,11 @@ export class LoginComponent {
         }
       },
       (error) => {
-        console.error('Error al iniciar sesión:', error);
-        alert(error.error.message || 'Credenciales incorrectas');
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: error.error.message || 'Credenciales incorrectas',
+        });
         
       }
     );
@@ -68,6 +73,7 @@ export class LoginComponent {
     this.router.navigate([direccion]); // se navega a la ruta que se le pase por parametro
   }
   
-
-
+  togglePasswordVisibility() {
+    this.isPasswordVisible = !this.isPasswordVisible;
+  }
 }

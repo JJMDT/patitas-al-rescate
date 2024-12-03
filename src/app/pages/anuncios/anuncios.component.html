@@ -1,5 +1,9 @@
 <div class="container_mascotas">
   <h1>Anuncios de mascotas perdidas</h1>
+  <div class="container" style="display: flex; justify-content: center;">
+    <button class="btn btn-danger" *ngIf="authLoginService.isLoggedIn()" (click)="navegar('crear-anuncio')">Crear anuncio</button>
+  </div>
+  <br>
   <div class="anuncios">
     <div *ngFor="let publicacion of publicaciones" class="card">
       <h3>{{ publicacion.name || 'Sin nombre' }}</h3>

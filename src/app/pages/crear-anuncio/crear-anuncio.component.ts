@@ -57,14 +57,18 @@ export class CrearAnuncioComponent {
     console.log(nuevoAnuncio)
 
     this.servicioMascotasService.crearPublicacion(nuevoAnuncio).subscribe((data: any) => {
-      console.log("esto es lo nuevo")
       console.log(data);
     });
     //this.dropZoneImgAppComponent.subirImagen();
 
     // enviar nuevoAnuncio a la base de datos
-    alert('Anuncio publicado con éxito');
-
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "Anuncio publicado con éxito",
+      showConfirmButton: false,
+      timer: 1500
+    });
   
       this.navegar('/anuncios');
     

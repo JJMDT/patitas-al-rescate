@@ -18,24 +18,24 @@ constructor(
      public authService: AuthLoginService
     ) { 
 
-    this.router.events.subscribe((e) => {
-      if(e instanceof NavigationEnd){
-      switch(e.urlAfterRedirects){
-        case "/home":
-          this.seleccionado = [true,false,false];
-          break;
-        case "/anuncios":
-          this.seleccionado = [false,true,false];
-          break;
-          case "/nosotros":
-          this.seleccionado = [false,false,true];
-          break;
-          default:
-          this.seleccionado = [false,false,false];
-          break;
-      }}
-  })}
-
+  //   this.router.events.subscribe((e) => {
+  //     if(e instanceof NavigationEnd){
+  //     switch(e.urlAfterRedirects){
+  //       case "/home":
+  //         this.seleccionado = [true,false,false];
+  //         break;
+  //       case "/anuncios":
+  //         this.seleccionado = [false,true,false];
+  //         break;
+  //         case "/nosotros":
+  //         this.seleccionado = [false,false,true];
+  //         break;
+  //         default:
+  //         this.seleccionado = [false,false,false];
+  //         break;
+  //     }}
+  // })}
+    }
   navegar(direccion :string){
     this.router.navigate([direccion]); // se navega a la ruta que se le pase por parametro
   }

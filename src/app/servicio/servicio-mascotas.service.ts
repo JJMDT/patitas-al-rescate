@@ -20,7 +20,6 @@ export class ServicioMascotasService {
 
   verPublicaciones(): Observable<any> {
     const publicaciones  = this.http.get(`${this.url}/all`);
-    console.log(publicaciones);
     return publicaciones;
   }
 

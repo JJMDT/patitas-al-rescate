@@ -22,4 +22,15 @@ export class UserService {
     console.log(perfil);
     return perfil;
   }
+
+
+
+  editarPerfil(user: any): Observable<any> {
+    const userId = this.authLoginService.getUserId();
+    console.log('userId:', userId);
+    // Aquí usas el userId para hacer la petición PUT y actualizar el perfil
+    return this.http.put(`${this.url}/user/edit/${userId}`, user);
+  }
+
+
 }

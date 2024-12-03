@@ -24,7 +24,11 @@ export class AuthLoginService {
 
     return this.http.post(`${this.apiUrl}/login`, datos).pipe(
       catchError((error) => {
-        console.error('Error en inicio de sesión:', error);
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Error al iniciar sesion",
+        });
         return throwError(() => new Error('Inicio de sesión fallido.'));
       })
     );
@@ -56,7 +60,6 @@ export class AuthLoginService {
         if (result.isConfirmed) {
           localStorage.removeItem('authToken');
           localStorage.removeItem('userName');
-          console.log('Sesión cerrada. Token eliminado.');
           Swal.fire({
             title: "Sesión cerrada con éxito",
             icon: "success"
@@ -78,6 +81,13 @@ export class AuthLoginService {
   getUserName(): string {
     if (this.isBrowser()) {
       return localStorage.getItem('userName') || '';
+    }
+    return '';
+  }
+
+  getUserId(): string {
+    if (this.isBrowser()) {
+      return localStorage.getItem('userId') || '';
     }
     return '';
   }

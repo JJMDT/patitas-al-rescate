@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 export class ProfileComponent {
   user:any;
   mostrarModal: boolean = false;
+  userSelected: any = null;
 
 
   constructor(
@@ -24,7 +25,6 @@ export class ProfileComponent {
     this.userService.verPerfil().subscribe({
       next: (response: any) => {
         this.user = response;
-        console.log('Perfil obtenido es :', this.user);
       },
       error: (error: any) => {
         console.error('Error al obtener perfil:', error);
@@ -32,10 +32,18 @@ export class ProfileComponent {
     });
   }
 
+  abrirModal(user: any): void {
+    this.mostrarModal = true;
+    this.userSelected = user;
+  }
+  cerrarModal(): void {
+    this.mostrarModal = false;
+    this.userSelected = null;
+  }
+
 
   guardarCambios(): void {
     // Lógica para guardar los cambios
-    console.log('Cambios guardados:', this.user);
     this.mostrarModal = false; // Cerrar el modal después de guardar los cambios
   }
 }

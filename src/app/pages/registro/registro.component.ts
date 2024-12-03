@@ -5,6 +5,8 @@ import { FormsModule } from '@angular/forms';  // Importa FormsModule
 //import { FormsModule, ReactiveFormsModule } from '@angular/forms';  // Importa FormsModule y ReactiveFormsModule
 import { Usuario } from '../../model/usuario';
 import { UsuariosService } from '../../servicio/usuarios.service';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import Swal from 'sweetalert2'
 
 
 @Component({
@@ -56,7 +58,13 @@ export class RegistroComponent {
     });
 
     console.log(nuevoUsuario)
-    alert('Usuario registrado con éxito');
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: 'Usuario registrado con éxito',
+      showConfirmButton: false,
+      timer: 1500
+    });
       this.navegar('login');
   }
 }

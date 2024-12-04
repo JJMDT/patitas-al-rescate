@@ -15,6 +15,7 @@ export class ProfileComponent {
   user:any;
   mostrarModal: boolean = false;
   userSelected: any = null;
+  activeTab: string = 'perfil'; // Variable para rastrear la pestaña activa
 
 
   constructor(
@@ -30,6 +31,10 @@ export class ProfileComponent {
         console.error('Error al obtener perfil:', error);
       }
     });
+  }
+
+  setActiveTab(tab: string): void {
+    this.activeTab = tab;
   }
 
   abrirModal(user: any): void {

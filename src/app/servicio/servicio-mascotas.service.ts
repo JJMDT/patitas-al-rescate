@@ -26,6 +26,7 @@ export class ServicioMascotasService {
   crearPublicacion(datos : any): Observable<any>{
     return this.http.post(`${this.url}/create`, datos);
   }
+  
 
 }
 

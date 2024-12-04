@@ -5,31 +5,87 @@
   </div>
   <br>
   <div class="anuncios">
-    <div *ngFor="let publicacion of publicaciones" class="card">
-      <h3>{{ publicacion.name || 'Sin nombre' }}</h3>
-      <h4>{{ publicacion.district || 'Distrito desconocido' }}</h4>
-      <h5>{{ publicacion.dateLost || 'Fecha no especificada' }}</h5>
-      <img [src]="publicacion.image || 'ruta_predeterminada.jpg'" [alt]="publicacion.name || 'Mascota'">
-      <p>{{ publicacion.description || 'Descripción no disponible' }}</p>
-      <p><strong>Tipo:</strong> {{ publicacion.type || 'No especificado' }}</p>
-      <p><strong>Raza:</strong> {{ publicacion.race || 'No especificada' }}</p>
-      <p><strong>Sexo:</strong> {{ publicacion.sex || 'No especificado' }}</p>
-      <p><strong>Tamaño:</strong> {{ publicacion.sizePet || 'No especificado' }}</p>
-
-      <!-- Botón para abrir el modal -->
-      <div>
-        <button (click)="abrirModal(publicacion)">Contactar</button>
+    <div class="card" *ngFor="let publicacion of publicaciones" style="width: 18rem;">
+      <h3 class="card-title">{{ publicacion.name}}</h3>
+      <img class="card-img-top" [src]="publicacion.image" alt={{publicacion.name}}>
+    
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Distrito: {{ publicacion.district}} </li>
+        <li class="list-group-item">Extraviado: {{ publicacion.dateLost}} </li>
+        <li class="list-group-item">Estado: {{ publicacion.isLost ? 'Perdido' : 'Encontrado' }} </li>
+      </ul>
+      <div class="card-body">
+        <button (click)="abrirModal(publicacion)">Más info</button>
       </div>
     </div>
   </div>
-  <div class="modal" *ngIf="mostrarModal">
-    <div class="modal-content">
-      <span class="close" (click)="cerrarModal()">X</span>
-      <h2>Información de contacto</h2>
-      <p>¡Gracias por interesarte en {{ publicacionSeleccionada?.name || 'la mascota' }}!</p>
-      <p>Distrito: {{ publicacionSeleccionada?.district || 'No especificado' }}</p>
-      <p>Teléfono: <strong>+54 9 123 456 789</strong></p>
-      <p>Email: <strong>contacto</strong></p>
+  <!-- Modal de Bootstrap -->
+  <div *ngIf="authLoginService.isLoggedIn()" class="modal fade" [ngClass]="{'show': mostrarModal}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" [ngStyle]="{'display': mostrarModal ? 'block' : 'none'}">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Información de contacto</h5>
+          <button type="button" class="close" (click)="cerrarModal()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>¡Gracias por interesarte en {{ publicacionSeleccionada?.name || 'la mascota' }}!</p>
+          <img class="card-img-top" width="100%" [src]="publicacionSeleccionada?.image" alt="{{ publicacionSeleccionada?.name }}">
+          <br>
+          <p>{{ publicacionSeleccionada?.description || 'No especificado' }}</p>
+          <p>Raza: {{ publicacionSeleccionada?.race || 'No especificado' }}</p>
+          <p>Sexo: {{ publicacionSeleccionada?.sex || 'No especificado' }}</p>
+          <p>Distrito: {{ publicacionSeleccionada?.district || 'No especificado' }}</p>
+          <p>Direccion aprox: {{ publicacionSeleccionada?.direction || 'No especificado' }}</p>
+          <p>Fecha de extravio: {{ publicacionSeleccionada?.dateLost || 'No especificado' }}</p>
+          <h5>Contacto</h5>
+          <p>Nombre: <strong>{{ publicacionSeleccionada?.user.name }} {{publicacionSeleccionada?.user.lastName}}</strong></p>
+          <p>Teléfono: <strong>{{ publicacionSeleccionada?.user.phone || '+54 9 123 456 789' }}</strong></p>
+          <p>Email: <strong>{{ publicacionSeleccionada?.user.email || 'admin@admin.com' }}</strong></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" (click)="cerrarModal()">Cerrar</button>
+        </div>
+      </div>
     </div>
   </div>
+
+  <!-- Alert Modal for not logged in users -->
+  <div *ngIf="!authLoginService.isLoggedIn()" class="modal fade" [ngClass]="{'show': mostrarModal}" tabindex="-1" role="dialog" aria-labelledby="alertModalLabel" aria-hidden="true" [ngStyle]="{'display': mostrarModal ? 'block' : 'none'}">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="alertModalLabel">Atención</h5>
+          <button type="button" class="close" (click)="cerrarModal()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Por favor, <a (click)="navegar('login')" style="color: #7529ef; cursor: pointer;"> <span>inicia sesión </span></a> para continuar.</p>
+         
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+
 </div>
+
+
+<!-- <div class="modal" *ngIf="mostrarModal">
+  <div class="modal-content">
+    <span class="close" (click)="cerrarModal()">X</span>
+    <br>
+    <h3>Información de contacto</h3>
+    <p>¡Gracias por interesarte en {{ publicacionSeleccionada?.name || 'la mascota' }}!</p>
+    <img class="card-img-top" width="50px" [src]="publicacionSeleccionada?.image" alt={{publicacionSeleccionada.name}}>
+
+    <p>{{ publicacionSeleccionada?.description || 'No especificado' }}</p>
+    <p>Raza: {{ publicacionSeleccionada?.race || 'No especificado' }}</p>
+    <p>Distrito: {{ publicacionSeleccionada?.district || 'No especificado' }}</p>
+    <p>Fecha de pérdida: {{ publicacionSeleccionada?.dateLost || 'No especificado' }}</p>
+    <p>Teléfono: <strong>{{ publicacionSeleccionada?.phone || '+54 9 123 456 789' }}</strong></p>
+  </div>
+</div> -->

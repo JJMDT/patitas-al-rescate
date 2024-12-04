@@ -6,6 +6,7 @@ import { DropZoneImgAppComponent } from '../../components/img-drop/drop-zone-img
 import { ServicioMascotasService } from '../../servicio/servicio-mascotas.service';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import Swal from 'sweetalert2'
+import { AuthLoginService } from '../../servicio/auth-login.service';
 
 
 @Component({
@@ -38,7 +39,8 @@ export class CrearAnuncioComponent {
 
   constructor(
     private router: Router,
-    private servicioMascotasService: ServicioMascotasService
+    private servicioMascotasService: ServicioMascotasService,
+    public authLoginService: AuthLoginService
     
   ) {}
 
@@ -52,7 +54,8 @@ export class CrearAnuncioComponent {
   
   async publicarAnuncio(){
     const urlImagen = await this.dropZoneImgAppComponent.subirImagen();
-    const nuevoAnuncio : Publicacion = { ...this.publicacion, image: urlImagen, userName: "admin@gmail.com" };
+    const userName = this.authLoginService.getUserName();
+    const nuevoAnuncio : Publicacion = { ...this.publicacion, image: urlImagen, userName: userName };
     
     console.log(nuevoAnuncio)
 

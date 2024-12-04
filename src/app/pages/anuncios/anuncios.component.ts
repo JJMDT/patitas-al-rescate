@@ -13,7 +13,6 @@ import { AuthLoginService } from '../../servicio/auth-login.service';
 export class AnunciosComponent implements OnInit {
 
   publicaciones: any[] = []; // Lista de publicaciones
-
   mostrarModal: boolean = false;
   publicacionSeleccionada: any = null;
   
@@ -40,6 +39,7 @@ export class AnunciosComponent implements OnInit {
   // Función para abrir el modal y asignar la publicación seleccionada
   
   abrirModal(publicacion: any): void {
+    console.log('Publicación seleccionada:', publicacion);
     this.publicacionSeleccionada = publicacion;
     this.mostrarModal = true;
   }

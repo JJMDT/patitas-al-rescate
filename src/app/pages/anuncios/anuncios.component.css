@@ -88,8 +88,8 @@
 .card button {
     background: rgb(185, 125, 185, 0.9);
     color: white;
-    font-size: 18px;
-    padding: 10px 15px;
+    font-size: 15px;
+    padding: 5px 10px;
     border-radius: 5px;
     border: none;
     cursor: pointer;
@@ -136,4 +136,7 @@
     font-weight: bold;
   }
 
-  
+  .modal-content img {
+    width: 250px;
+    margin: auto;
+  }

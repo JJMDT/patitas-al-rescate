@@ -1,58 +1,80 @@
 <div class="profile_container">
-    <div *ngIf="user">
-        <h2>Información Personal</h2>
-        <br>
-        <div style="padding: 20px;">
+  <nav class="nav nav-pills nav-justified p-5">
+    <a class="nav-item nav-link" [class.active]="activeTab === 'perfil'" (click)="setActiveTab('perfil')">Perfil</a>
+    <a class="nav-item nav-link" [class.active]="activeTab === 'mis-posts'" (click)="setActiveTab('mis-posts')">Posts</a>
+  </nav>
 
-            <p>Nombre de Usuario: {{ user.userName }}</p>
-            <p>Nombre: {{ user.name }}</p>
-            <p>Apellido: {{ user.lastName }}</p>
-            <p>Dirección: {{ user.direction }}</p>
-            <p>Distrito: {{ user.district }}</p>
-            <p>Teléfono: {{ user.phone }}</p>
-            <p>Email: {{ user.email }}</p>
-            <br>
-            <button type="button" class="btn btn-success" (click)="mostrarModal = true">Editar Información</button>
-        </div>
-    </div>
-  
-  
-    <div class="modal" [ngClass]="{'show': mostrarModal}" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true" [ngStyle]="{'display': mostrarModal ? 'block' : 'none'}">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="editModalLabel">Editar Información Personal</h5>
-            
-          </div>
-          <div class="modal-body">
-            <form>
-              <div class="form-group">
-                <label for="name" class="col-form-label">Nombre:</label>
-                <input type="text" class="form-control" id="name" [(ngModel)]="user.name" name="name">
-              </div>
-              <div class="form-group">
-                <label for="lastName" class="col-form-label">Apellido:</label>
-                <input type="text" class="form-control" id="lastName" [(ngModel)]="user.lastName" name="lastName">
-              </div>
-              <div class="form-group">
-                <label for="direction" class="col-form-label">Dirección:</label>
-                <input type="text" class="form-control" id="direction" [(ngModel)]="user.direction" name="direction">
-              </div>
-              <div class="form-group">
-                <label for="district" class="col-form-label">Distrito:</label>
-                <input type="text" class="form-control" id="district" [(ngModel)]="user.district" name="district">
-              </div>
-              <div class="form-group">
-                <label for="phone" class="col-form-label">Teléfono:</label>
-                <input type="text" class="form-control" id="phone" [(ngModel)]="user.phone" name="phone">
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" (click)="mostrarModal = false">Cerrar</button>
-            <button type="button" class="btn btn-primary" (click)="guardarCambios()">Guardar Cambios</button>
-          </div>
-        </div>
-      </div>
+  <div *ngIf="activeTab === 'perfil' && user">
+    <h2>Información Personal</h2>
+    <div style="padding: 20px;">
+      <p>Nombre de Usuario: {{ user.userName }}</p>
+      <p>Nombre: {{ user.name }}</p>
+      <p>Apellido: {{ user.lastName }}</p>
+      <p>Dirección: {{ user.direction }}</p>
+      <p>Distrito: {{ user.district }}</p>
+      <p>Teléfono: {{ user.phone }}</p>
+      <p>Email: {{ user.email }}</p>
+      <br>
+      <button type="button" class="btn btn-success" (click)="mostrarModal = true">Editar Información</button>
     </div>
   </div>
+
+  <!-- post  -->
+  <div *ngIf="activeTab === 'mis-posts' && user">
+    <h2>Mis Posts</h2>
+    <br>
+    <!-- Aquí puedes agregar el contenido de "Mis Posts" -->
+    <div style="padding: 20px;">
+      <!-- Ejemplo de contenido -->
+      <p>Aquí se mostrarán tus posts.</p>
+      <div *ngFor="let publication of user.publications">
+        <h3>{{ publication.title }}</h3>
+        <p>{{ publication.content }}</p>
+        <small>Publicado el: {{ publication.date | date }}</small>
+        <hr>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- modal -->
+  
+  <div class="modal fade" [ngClass]="{'show': mostrarModal}" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true" [ngStyle]="{'display': mostrarModal ? 'block' : 'none'}">
+    <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+      <h5 class="modal-title" id="editModalLabel">Editar Información Personal</h5>
+      </div>
+      <div class="modal-body">
+      <form>
+        <div class="form-group">
+        <label for="name" class="col-form-label">Nombre:</label>
+        <input type="text" class="form-control" id="name" [(ngModel)]="user.name" name="name">
+        </div>
+        <div class="form-group">
+        <label for="lastName" class="col-form-label">Apellido:</label>
+        <input type="text" class="form-control" id="lastName" [(ngModel)]="user.lastName" name="lastName">
+        </div>
+        <div class="form-group">
+        <label for="direction" class="col-form-label">Dirección:</label>
+        <input type="text" class="form-control" id="direction" [(ngModel)]="user.direction" name="direction">
+        </div>
+        <div class="form-group">
+        <label for="district" class="col-form-label">Distrito:</label>
+        <input type="text" class="form-control" id="district" [(ngModel)]="user.district" name="district">
+        </div>
+        <div class="form-group">
+        <label for="phone" class="col-form-label">Teléfono:</label>
+        <input type="text" class="form-control" id="phone" [(ngModel)]="user.phone" name="phone">
+        </div>
+      </form>
+      </div>
+      <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" (click)="mostrarModal = false">Cerrar</button>
+      <button type="button" class="btn btn-primary" (click)="guardarCambios()">Guardar Cambios</button>
+      </div>
+    </div>
+    </div>
+  </div>
+  <div class="modal-backdrop fade show" *ngIf="mostrarModal"></div>
+</div>
